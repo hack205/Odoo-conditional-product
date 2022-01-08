@@ -1,0 +1,29 @@
+<odoo>
+  <data>
+    <record id="view_product_form" model="ir.ui.view">
+      <field name="name">view.product.form</field>
+      <field name="model">product.template</field>
+      <field name="inherit_id" ref="product.product_template_form_view"/>
+      <field name="arch" type="xml">
+        <notebook position="inside">
+          <page string="Campos en línea de orden">
+            <group string="Teléfono" name="sims" modifiers="{}">
+              <label for="iccid"/>
+              <div modifiers="{}">
+                <field name="iccid" class="mb-0"/>
+              </div>
+              <label for="imei"/>
+              <div modifiers="{}">
+                <field name="imei" class="mb-0"/>
+              </div>
+              <label for="phone"/>
+              <div modifiers="{}">
+                <field name="phone" class="mb-0"/>
+              </div>
+            </group>
+          </page>
+        </notebook>
+      </field>
+    </record>
+  </data>
+</odoo>

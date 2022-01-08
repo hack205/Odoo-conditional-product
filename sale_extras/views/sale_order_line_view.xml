@@ -1,0 +1,23 @@
+<odoo>
+  <data>
+    <record id="view_order_form" model="ir.ui.view">
+      <field name="name">view.order.form</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='order_line']/tree//field[@name='tax_id']" position="before">
+          <field name="phone" invisible="1"/>  <!--True or False Product.Template--> 
+          <field name="phone_char" class="mb-0" attrs="{'invisible': [('phone', '=', False)]}"/>
+
+          <field name="method_payment" invisible="1"/>  <!--True or False Product.Template--> 
+          <field name="method_payment_selection" class="mb-0" attrs="{'invisible': [('method_payment', '=', False)]}"/>
+
+          <field name="nc_date" invisible="1"/>  <!--True or False Product.Template--> 
+          <field name="nc_date_date" class="mb-0" attrs="{'invisible': [('nc_date', '=', False)]}"/>
+
+          <!-- TODO: Add all fields you need -->
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
